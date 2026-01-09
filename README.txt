@@ -1,4 +1,4 @@
-Readme Fraganzza
+README Fraganzza
 
 Para visualizar este proyecto sigue los siguientes pasos:
 
@@ -17,6 +17,6 @@ Para visualizar este proyecto sigue los siguientes pasos:
 email: maestrosimon@admin.com
 contraseña: Chusaesbann_25
 
-
+f
 
 
