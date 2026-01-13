@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Servicio de Base de Datos
+  basedatos:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password_root  # Contraseña del root
+      MYSQL_DATABASE: simple_attendance_db
+      MYSQL_USER: usuario_clase
+      MYSQL_PASSWORD: password_clase
+    volumes:
+      # Guardamos los datos en un volumen para no perderlos
+      - db_data:/var/lib/mysql
+      # Si tienes el backup.sql, descomenta la siguiente línea:
+      # - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+
+  # Tu Servicio Web
+  web:
+    # Usamos la imagen que acabas de subir al Hub
+    image: ohryy/fraganzza:v1
+    restart: always
+    ports:
+      # Mapeamos el puerto 8080 de tu PC al 80 del contenedor
+      - "8080:80"
+    depends_on:
+      - basedatos
+
+volumes:
+  db_data: {}
