@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraganzza - Login</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+        <div class="auth-box">
+
+            <a href="index.php" class="auth-logo">Fraganzza</a>
+
+            <fieldset>
+                <h1>Login</h1>
+                <form method="POST" action="php/login.php">
+
+                    <div class="linea">
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" name="email" placeholder="Escribe tu correo" autofocus>
+                    </div>
+
+                    <div class="linea">
+                        <label for="password">Contraseña:</label>
+                        <div class="input-wrapper">
+                            <input id="password" type="password" name="password" placeholder="Escribe tu contraseña">
+                            <div class="ojo">
+                                <img src="img/ojoCerrado.png" alt="ojo cerrado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boton">
+                        <input type="submit" value="Enviar datos">
+                    </div>
+                    <div class="adverLogin">
+                        <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+            </fieldset>
+            <div class="unete">
+                <a href="registro.html">¡Únete a la comunidad!</a>
+            </div>
+            <script src="js/input.js"></script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

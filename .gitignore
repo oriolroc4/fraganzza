@@ -1,0 +1,6 @@
+# Ignorar imágenes pesadas opcionales
+img/icon.png
+
+# Variables de entorno locales
+.env
+.env.local

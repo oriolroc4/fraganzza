@@ -1,0 +1,34 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "9000:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USER: fraganzza
+      DB_PASSWORD: fraganzza2025
+      DB_NAME: login
+
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root2025
+      MYSQL_DATABASE: login
+      MYSQL_USER: fraganzza
+      MYSQL_PASSWORD: fraganzza2025
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./login.sql:/docker-entrypoint-initdb.d/login.sql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
